@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap');
+
+/* Subtle fade-in animation with a scale effect */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-description {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    background: radial-gradient(circle, #ff92a4, #ae1957);
+    text-align: center;
+    animation: fadeInScale 1s ease-in-out;
+    padding: 80px 20px 20px;
+    min-height: 100vh; /* Ensure it doesn't shrink */
+    padding-top: 120px; /* Creates equal spacing from navbar */
+}
+
+/* Improved title with a glowing hover effect */
+.about-title {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Glow effect on hover */
+.about-title:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Description with better readability */
+.about-description {
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    color: #f0f0f0;
+    margin-top: 10px;
+    width: 70%;
+    max-width: 800px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}

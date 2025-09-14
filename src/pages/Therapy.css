@@ -1,0 +1,149 @@
+@media screen and (min-width: 1200px) {
+  .video-grid, .audio-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 videos/audio per row */
+  }
+}
+
+/* Therapy Page Main Container */
+.therapy-container {
+  text-align: center;
+  padding: 30px;
+  min-height: 100vh;
+  margin-top: 10px;
+  padding-top: 10px;  /* Prevent overlap with navbar */
+}
+
+/* Stylish Heading Box */
+.heading-box {
+  display: inline-block;
+  background: #6a1b9a;
+  color: white;
+  padding: 18px 28px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.heading-box:hover {
+  transform: scale(1.08);
+  background: #c18fff;
+}
+
+/* Navigation Buttons Section */
+.therapy-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 100px;
+  padding: 15px;
+  background: linear-gradient(135deg, #4a148c, #6a1b9a);
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Stylish Navigation Buttons */
+.therapy-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: #8e24aa;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.therapy-btn:hover {
+  background: #6a1b9a;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.therapy-btn.active {
+  background: #d500f9;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Video & Audio Gallery Layout */
+.video-gallery, .audio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 0px;
+  padding: 20px;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .video-gallery {
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 videos per row */
+  }
+  .audio-gallery {
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 audio files per row */
+  }
+}
+
+/* Video, Audio & Exercise Cards */
+.video-card, .audio-card, .exercise-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.video-card:hover, .audio-card:hover, .exercise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Player */
+.video-player {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-player:hover {
+  transform: scale(1.05);
+}
+
+/* Audio Player */
+.audio-player {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.audio-player:hover {
+  transform: scale(1.05);
+}
+
+/* Exercise */
+.exercise {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.exercise:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Animated Floating Effect for Videos & Audios */
+@keyframes floatEffect {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.video-card:hover, .audio-card:hover, .exercise:hover {
+  animation: floatEffect 1.5s infinite ease-in-out;
+}
