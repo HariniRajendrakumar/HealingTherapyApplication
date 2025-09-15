@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// ✅ Fix: Ensure title is stored with audioPath
+//  Fix: Ensure title is stored with audioPath
 router.post("/upload/audios", upload.array("audios", 50), async (req, res) => {
     try {
         if (!req.files || req.files.length === 0) {
@@ -31,19 +31,19 @@ router.post("/upload/audios", upload.array("audios", 50), async (req, res) => {
 
         await Audio.insertMany(audioData);
 
-        res.json({ message: "✅ Audios uploaded successfully!", files: audioData });
+        res.json({ message: " Audios uploaded successfully!", files: audioData });
     } catch (error) {
-        res.status(500).json({ error: "❌ Error uploading audios", details: error.message });
+        res.status(500).json({ error: " Error uploading audios", details: error.message });
     }
 });
 
-// ✅ API to Fetch All Audios (Fixed)
+//  API to Fetch All Audios (Fixed)
 router.get("/audios", async (req, res) => {
     try {
         const audios = await Audio.find();
         res.json(audios);
     } catch (error) {
-        res.status(500).json({ error: "❌ Error retrieving audios", details: error.message });
+        res.status(500).json({ error: " Error retrieving audios", details: error.message });
     }
 });
 
