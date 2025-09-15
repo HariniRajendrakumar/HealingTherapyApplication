@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Appointment = require("../models/Appointment");
 
-// ✅ API to Book an Appointment
+//  API to Book an Appointment
 router.post("/book-appointment", async (req, res) => {
   try {
     const { name, email, phone, date, time } = req.body;
@@ -14,13 +14,13 @@ router.post("/book-appointment", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // ✅ Check if the slot is already booked
+    //  Check if the slot is already booked
     const existingAppointment = await Appointment.findOne({ date, time });
     if (existingAppointment) {
       return res.status(400).json({ error: "This time slot is already booked. Please choose another slot." });
     }
 
-    // ✅ Save new appointment
+    //  Save new appointment
     const newAppointment = new Appointment({ name, email, phone, date, time });
     await newAppointment.save();
 
@@ -31,7 +31,7 @@ router.post("/book-appointment", async (req, res) => {
   }
 });
 
-// ✅ API to Fetch All Appointments
+//  API to Fetch All Appointments
 router.get("/appointments", async (req, res) => {
   try {
     const appointments = await Appointment.find();
