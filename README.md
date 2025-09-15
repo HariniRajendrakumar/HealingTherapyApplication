@@ -21,5 +21,4 @@
 4. Open your browser at:
 
 Frontend: http://localhost:3000
-
 Backend API: http://localhost:5001
