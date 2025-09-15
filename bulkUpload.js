@@ -17,9 +17,9 @@ const uploadImage = async (filePath) => {
       },
     });
 
-    console.log(`✅ Uploaded: ${filePath} - ${response.data.imagePath}`);
+    console.log(` Uploaded: ${filePath} - ${response.data.imagePath}`);
   } catch (error) {
-    console.log(`❌ Error uploading ${filePath}:`, error.response?.data || error.message);
+    console.log(` Error uploading ${filePath}:`, error.response?.data || error.message);
   }
 };
 
@@ -29,7 +29,7 @@ const startBulkUpload = async () => {
       .filter(file => file.match(/\.(jpg|jpeg|png)$/i)); // Only image files
 
     if (files.length === 0) {
-      console.log("⚠️ No images found in the folder.");
+      console.log(" No images found in the folder.");
       return;
     }
 
@@ -38,9 +38,9 @@ const startBulkUpload = async () => {
       await uploadImage(filePath);
     }
 
-    console.log("🎉 All images uploaded successfully!");
+    console.log(" All images uploaded successfully!");
   } catch (err) {
-    console.error("❌ Error reading folder:", err.message);
+    console.error(" Error reading folder:", err.message);
   }
 };
 
