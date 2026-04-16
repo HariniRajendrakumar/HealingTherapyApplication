@@ -8,6 +8,8 @@ import VideoPlayer from "./components/VideoPlayer";
 import Sessions from "./pages/Sessions";
 import "./App.css";
 
+//App
+
 function App() {
   return (
     <div className="app-container">
